@@ -4,9 +4,13 @@ const ALLOWED_ORIGINS = [
   "https://camjam.talker.dev",
   "https://camjam-ai.vercel.app",
 ];
+
 export function cors(req: Request): Record<string, string> {
   const origin = req.headers.get("Origin");
-  if (!origin || !ALLOWED_ORIGINS.includes(origin)) {
+  if (
+    !origin ||
+    ALLOWED_ORIGINS.findIndex((allowed) => allowed.startsWith(origin)) === -1
+  ) {
     return {};
   }
   return {
