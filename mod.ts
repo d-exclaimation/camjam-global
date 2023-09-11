@@ -14,7 +14,7 @@ Deno.serve(
         return json(req, entry.value);
       }
       const value = random();
-      await kv.set(["daily", day], value);
+      await kv.set(["daily", day], { ...value, day });
       return json(req, value);
     },
   })
