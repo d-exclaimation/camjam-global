@@ -3,6 +3,9 @@ const ALLOWED_ORIGINS = [
   "https://camjam.d-exclaimation.me",
   "https://camjam.talker.dev",
   "https://camjam-ai.vercel.app",
+  "https://pixle.d-exclaimation.me",
+  "https://pixle.talker.dev",
+  "https://pixle-ai.vercel.app",
 ];
 
 export function cors(req: Request): Record<string, string> {
