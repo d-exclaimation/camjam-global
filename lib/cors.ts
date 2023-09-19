@@ -6,6 +6,12 @@ const ALLOWED_ORIGINS = [
   "https://pixle.d-exclaimation.me",
   "https://pixle.talker.dev",
   "https://pixle-ai.vercel.app",
+  "https://pixle.app",
+  "https://global.pixle.app",
+  "https://alpha.pixle.app",
+  "https://beta.pixle.app",
+  "https://canary.pixle.app",
+  "https://experimental.pixle.app",
 ];
 
 export function cors(req: Request): Record<string, string> {
