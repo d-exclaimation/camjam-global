@@ -1,6 +1,6 @@
 import { router } from "https://deno.land/x/rutt@0.1.0/mod.ts";
 import { json } from "./lib/cors.ts";
-import { random } from "./lib/game.ts";
+import { all, random } from "./lib/game.ts";
 import { kv } from "./lib/kv.ts";
 
 Deno.serve(
@@ -16,6 +16,9 @@ Deno.serve(
       const value = random();
       await kv.set(["daily", day], { ...value, day });
       return json(req, value);
+    },
+    "/lib": (req) => {
+      return json(req, all);
     },
   })
 );
